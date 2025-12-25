@@ -1,0 +1,4 @@
+@EndUserText.label: 'MATE ALUCES'
+define service ZMM_MAT_ALUCES {
+  expose ZMM_MAT_ALUCES_001;
+}
