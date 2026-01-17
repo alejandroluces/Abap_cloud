@@ -6,7 +6,7 @@
     <METADATA>
      <NAME>ZMM_MAT_ALUCES</NAME>
      <TYPE>SRVB/SVB</TYPE>
-     <DESCRIPTION>MAT ALUCES</DESCRIPTION>
+     <DESCRIPTION>DESP MAT</DESCRIPTION>
      <LANGUAGE>EN</LANGUAGE>
      <MASTER_LANGUAGE>EN</MASTER_LANGUAGE>
      <ABAP_LANGU_VERSION>5</ABAP_LANGU_VERSION>
@@ -25,9 +25,9 @@
          <SERVICE_VERSION>0001</SERVICE_VERSION>
          <RELEASE_STATE>NOT_RELEASED</RELEASE_STATE>
          <SRVD_REF>
-          <URI>/sap/bc/adt/ddic/srvd/sources/zmm_mat_aluces</URI>
+          <URI>/sap/bc/adt/ddic/srvd/sources/zmm_despl</URI>
           <TYPE>SRVD/SRV</TYPE>
-          <NAME>ZMM_MAT_ALUCES</NAME>
+          <NAME>ZMM_DESPL</NAME>
          </SRVD_REF>
          <BIND_TYPE_DATA>
           <CONTENT>

@@ -1,0 +1,38 @@
+@Metadata.layer: #CORE
+annotate view ZMM_MAT_ALUCES_001 with
+{
+  @UI.lineItem: [
+    { position: 10, criticality: 'Criticality', label: 'COL' }
+  ]
+  AlucesColor;
+
+  @UI.lineItem: [
+    { position: 20, criticality: 'Criticality', label: 'DESCRIPCION MATERIAL' }
+  ]
+  AlucesDescrip;
+
+  @UI.lineItem: [
+    { position: 30, label: 'ID' }
+  ]
+  AlucesId;
+
+  @UI.lineItem: [
+    { position: 40, label: 'PRECIO UNITARIO' }
+  ]
+  AlucesPrec;
+
+  @UI.lineItem: [
+    { position: 50, criticality: 'Criticality', label: 'PrecioTotal' }
+  ]
+  PrecioTotal;
+
+  @UI.lineItem: [
+    { position: 60, label: 'QTY' }
+  ]
+  AlucesQty;
+
+  @UI.lineItem: [
+    { position: 70, label: 'URL' }
+  ]
+  AlucesUrl;
+}
