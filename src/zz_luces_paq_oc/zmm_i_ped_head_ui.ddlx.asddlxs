@@ -1,0 +1,44 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+  typeName: 'Pedido',
+  typeNamePlural: 'Pedidos',
+  title: { 
+    type: #STANDARD,
+    value: 'PedidoId'
+  },
+  description: { 
+    value: 'Proveedor'
+  }
+}
+annotate view ZMM_I_PED_HEAD with
+{
+  /* Facets del Object Page (General + Items) */
+  @UI.facet: [
+    { id: 'General', label: 'General', position: 10, type: #IDENTIFICATION_REFERENCE },
+    { id: 'Items',   label: 'Items',   position: 20, type: #LINEITEM_REFERENCE, targetElement: '_Items' }
+  ]
+
+  /* List Report */
+  @UI.lineItem: [ { position: 10, label: 'Pedido', criticality: 'Criticality' } ]
+  @UI.identification: [ { position: 10, label: 'Pedido' } ]
+  @UI.selectionField: [ { position: 10 } ]
+  PedidoId;
+
+  @UI.lineItem: [ { position: 20, label: 'Proveedor' } ]
+  @UI.identification: [ { position: 20, label: 'Proveedor' } ]
+  @UI.selectionField: [ { position: 20 } ]
+  Proveedor;
+
+  @UI.lineItem: [ { position: 30, label: 'Fecha' } ]
+  @UI.identification: [ { position: 30, label: 'Fecha' } ]
+  @UI.selectionField: [ { position: 30 } ]
+  Fecha;
+
+  @UI.lineItem: [ { position: 40, label: 'Total', criticality: 'Criticality' } ]
+  @UI.identification: [ { position: 40, label: 'Total' } ]
+  Total;
+
+  /* Ocultar el valor numérico del semáforo */
+  @UI.hidden: true
+  Criticality;
+}

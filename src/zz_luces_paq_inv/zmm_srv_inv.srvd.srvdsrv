@@ -1,0 +1,5 @@
+@EndUserText.label: 'Servicio Inventario'
+define service ZMM_SRV_INV {
+  expose ZMM_I_INV_MAT;
+  expose ZMM_I_INV_MOV;
+}

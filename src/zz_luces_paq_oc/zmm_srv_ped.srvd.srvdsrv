@@ -1,0 +1,4 @@
+@EndUserText.label: 'Servicio Pedidos (Header-Item)'
+define service ZMM_SRV_PED {
+  expose ZMM_I_PED_HEAD as Pedidos;
+}
