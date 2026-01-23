@@ -20,9 +20,6 @@
     <OUTPUTLEN>000030</OUTPUTLEN>
     <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
    </DD04V>
-  <asx:values>
+  </asx:values>
  </asx:abap>
 </abapGit>
-
-
-
