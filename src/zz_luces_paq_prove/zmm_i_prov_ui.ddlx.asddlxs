@@ -1,1 +1,65 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Proveedor',
+    typeNamePlural: 'Proveedores',
+    title: {
+      type: #STANDARD,
+      value: 'Name1'
+    }
+  }
+}
+annotate view ZMM_I_PROV with
+{
+  @UI.facet: [{
+    id: 'ProviderData',
+    purpose: #STANDARD,
+    type: #IDENTIFICATION_REFERENCE,
+    label: 'Datos del Proveedor',
+    position: 10
+  }]
 
+  @UI: {
+    lineItem: [{ position: 10, importance: #HIGH }],
+    identification: [{ position: 10 }]
+  }
+  ProvId;
+
+  @UI: {
+    lineItem: [{ position: 20, importance: #HIGH }],
+    identification: [{ position: 20 }]
+  }
+  Name1;
+
+  @UI: {
+    lineItem: [{ position: 30 }],
+    identification: [{ position: 30 }]
+  }
+  Country;
+
+  @UI: {
+    lineItem: [{ position: 40 }],
+    identification: [{ position: 40 }]
+  }
+  City;
+
+  @UI: {
+    identification: [{ position: 50 }]
+  }
+  Street;
+
+  @UI: {
+    identification: [{ position: 60 }]
+  }
+  Nif1;
+
+  @UI: {
+    identification: [{ position: 70 }]
+  }
+  CreatedOn;
+
+  @UI: {
+    identification: [{ position: 80 }]
+  }
+  CreatedBy;
+}

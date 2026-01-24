@@ -1,1 +1,61 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Datos Bancarios',
+    typeNamePlural: 'Datos Bancarios Proveedor',
+    title: {
+      type: #STANDARD,
+      value: 'AccountHolder'
+    }
+  }
+}
+annotate view ZMM_I_PROV_BANK with
+{
+  @UI.facet: [{
+    id: 'BankData',
+    purpose: #STANDARD,
+    type: #IDENTIFICATION_REFERENCE,
+    label: 'Información Bancaria',
+    position: 10
+  }]
 
+  @UI: {
+    lineItem: [{ position: 10, importance: #HIGH }],
+    identification: [{ position: 10 }]
+  }
+  ProvId;
+
+  @UI: {
+    lineItem: [{ position: 20 }],
+    identification: [{ position: 20 }]
+  }
+  BankCountry;
+
+  @UI: {
+    lineItem: [{ position: 30 }],
+    identification: [{ position: 30 }]
+  }
+  BankKey;
+
+  @UI: {
+    lineItem: [{ position: 40, importance: #HIGH }],
+    identification: [{ position: 40 }]
+  }
+  BankAccount;
+
+  @UI: {
+    lineItem: [{ position: 50 }],
+    identification: [{ position: 50 }]
+  }
+  AccountHolder;
+
+  @UI: {
+    identification: [{ position: 60 }]
+  }
+  BankCc;
+
+  @UI: {
+    identification: [{ position: 70 }]
+  }
+  BankType;
+}
