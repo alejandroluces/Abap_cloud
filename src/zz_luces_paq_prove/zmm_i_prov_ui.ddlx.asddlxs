@@ -10,8 +10,7 @@
     description: {
       type: #STANDARD,
       value: 'ProvId'
-    },
-    imageUrl: 'sap-icon://supplier'
+    }
   },
   presentationVariant: [{
     sortOrder: [{
