@@ -1,7 +1,7 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'CDS View - Datos Bancarios Proveedor'
 define view entity ZMM_I_PROV_BANK
-  as select from z_data_lfbk
+  as select from zdatalfbk
   association to parent ZMM_I_PROV as _Provider on $projection.ProvId = _Provider.ProvId
 {
   key prov_id         as ProvId,

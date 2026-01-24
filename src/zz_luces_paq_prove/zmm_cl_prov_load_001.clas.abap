@@ -7,8 +7,8 @@ ENDCLASS.
 CLASS zmm_cl_prov_load_001 IMPLEMENTATION.
   METHOD if_oo_adt_classrun~main.
 
-    DATA lt_prov TYPE STANDARD TABLE OF z_data_prov WITH EMPTY KEY.
-    DATA lt_bank TYPE STANDARD TABLE OF z_data_lfbk WITH EMPTY KEY.
+    DATA lt_prov TYPE STANDARD TABLE OF zdataprov WITH EMPTY KEY.
+    DATA lt_bank TYPE STANDARD TABLE OF zdatalfbk WITH EMPTY KEY.
 
     lt_prov = VALUE #(
       ( prov_id = 'PROV00001' name1 = 'PROVEEDOR ABC SA'      country = 'CL' city = 'Santiago'    street = 'Av. Libertador 1000' created_on = sy-datum nif1 = '76123456-7' created_by = sy-uname )
@@ -27,16 +27,16 @@ CLASS zmm_cl_prov_load_001 IMPLEMENTATION.
     ).
 
     TRY.
-        DELETE FROM z_data_lfbk.
-        DELETE FROM z_data_prov.
+        DELETE FROM zdatalfbk.
+        DELETE FROM zdataprov.
 
-        INSERT z_data_prov FROM TABLE @lt_prov.
-        INSERT z_data_lfbk FROM TABLE @lt_bank.
+        INSERT zdataprov FROM TABLE @lt_prov.
+        INSERT zdatalfbk FROM TABLE @lt_bank.
 
         COMMIT WORK.
 
-        SELECT COUNT(*) FROM z_data_prov INTO @DATA(lv_cnt_prov).
-        SELECT COUNT(*) FROM z_data_lfbk INTO @DATA(lv_cnt_bank).
+        SELECT COUNT(*) FROM zdataprov INTO @DATA(lv_cnt_prov).
+        SELECT COUNT(*) FROM zdatalfbk INTO @DATA(lv_cnt_bank).
 
         out->write( |Proveedores cargados: { lv_cnt_prov } / Datos bancarios: { lv_cnt_bank }| ).
 
