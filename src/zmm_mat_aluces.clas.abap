@@ -1,7 +1,6 @@
 class ZMM_MAT_ALUCES definition
   public
-  final
-  create public .
+  create private .
 
 public section.
 protected section.

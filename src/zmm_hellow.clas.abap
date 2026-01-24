@@ -1,20 +1,13 @@
-CLASS zmm_hellow DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+class ZMM_HELLOW definition
+  public
+  create private .
 
-  PUBLIC SECTION.
-
-    INTERFACES if_oo_adt_classrun .
-  PROTECTED SECTION.
-  PRIVATE SECTION.
+public section.
+protected section.
+private section.
 ENDCLASS.
 
 
 
-CLASS zmm_hellow IMPLEMENTATION.
-METHOD if_oo_adt_classrun~main.
-        out->write('HOLA MUNDO EN ABAP CLOUD').
-  ENDMETHOD.
-
+CLASS ZMM_HELLOW IMPLEMENTATION.
 ENDCLASS.

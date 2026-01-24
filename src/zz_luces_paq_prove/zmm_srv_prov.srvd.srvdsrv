@@ -1,5 +1,5 @@
 @EndUserText.label: 'Service Definition - Proveedores'
 define service ZMM_SRV_PROV {
-  expose ZMM_I_PROV as Provider;
+  expose ZMM_I_PROV      as Provider;
   expose ZMM_I_PROV_BANK as ProviderBank;
 }
