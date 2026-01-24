@@ -6,60 +6,149 @@
     title: {
       type: #STANDARD,
       value: 'Name1'
-    }
-  }
+    },
+    description: {
+      type: #STANDARD,
+      value: 'ProvId'
+    },
+    imageUrl: 'sap-icon://supplier'
+  },
+  presentationVariant: [{
+    sortOrder: [{
+      by: 'Name1',
+      direction: #ASC
+    }],
+    visualizations: [{
+      type: #AS_LINEITEM
+    }]
+  }]
 }
 annotate view ZMM_I_PROV with
 {
-  @UI.facet: [{
-    id: 'ProviderData',
-    purpose: #STANDARD,
-    type: #IDENTIFICATION_REFERENCE,
-    label: 'Datos del Proveedor',
-    position: 10
-  }]
+  @UI.facet: [
+    {
+      id: 'GeneralInfo',
+      purpose: #STANDARD,
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'Información General',
+      position: 10
+    },
+    {
+      id: 'AddressInfo',
+      purpose: #STANDARD,
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'AddressData',
+      label: 'Dirección',
+      position: 20
+    },
+    {
+      id: 'AdminInfo',
+      purpose: #STANDARD,
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'AdminData',
+      label: 'Datos Administrativos',
+      position: 30
+    }
+  ]
 
   @UI: {
-    lineItem: [{ position: 10, importance: #HIGH }],
-    identification: [{ position: 10 }]
+    lineItem: [{ 
+      position: 10, 
+      importance: #HIGH,
+      label: 'ID Proveedor'
+    }],
+    identification: [{ 
+      position: 10,
+      label: 'ID Proveedor'
+    }],
+    selectionField: [{ position: 10 }]
   }
   ProvId;
 
   @UI: {
-    lineItem: [{ position: 20, importance: #HIGH }],
-    identification: [{ position: 20 }]
+    lineItem: [{ 
+      position: 20, 
+      importance: #HIGH,
+      label: 'Nombre'
+    }],
+    identification: [{ 
+      position: 20,
+      label: 'Nombre Completo'
+    }],
+    selectionField: [{ position: 20 }]
   }
   Name1;
 
   @UI: {
-    lineItem: [{ position: 30 }],
-    identification: [{ position: 30 }]
+    lineItem: [{ 
+      position: 30,
+      label: 'País'
+    }],
+    identification: [{ 
+      position: 30,
+      label: 'País'
+    }],
+    fieldGroup: [{ 
+      qualifier: 'AddressData',
+      position: 10
+    }],
+    selectionField: [{ position: 30 }]
   }
   Country;
 
   @UI: {
-    lineItem: [{ position: 40 }],
-    identification: [{ position: 40 }]
+    lineItem: [{ 
+      position: 40,
+      label: 'Ciudad'
+    }],
+    identification: [{ 
+      position: 40,
+      label: 'Ciudad'
+    }],
+    fieldGroup: [{ 
+      qualifier: 'AddressData',
+      position: 20
+    }],
+    selectionField: [{ position: 40 }]
   }
   City;
 
   @UI: {
-    identification: [{ position: 50 }]
+    fieldGroup: [{ 
+      qualifier: 'AddressData',
+      position: 30,
+      label: 'Calle/Dirección'
+    }]
   }
   Street;
 
   @UI: {
-    identification: [{ position: 60 }]
+    lineItem: [{ 
+      position: 50,
+      label: 'NIF/RUT'
+    }],
+    identification: [{ 
+      position: 50,
+      label: 'NIF/RUT'
+    }]
   }
   Nif1;
 
   @UI: {
-    identification: [{ position: 70 }]
+    fieldGroup: [{ 
+      qualifier: 'AdminData',
+      position: 10,
+      label: 'Fecha Creación'
+    }]
   }
   CreatedOn;
 
   @UI: {
-    identification: [{ position: 80 }]
+    fieldGroup: [{ 
+      qualifier: 'AdminData',
+      position: 20,
+      label: 'Creado Por'
+    }]
   }
   CreatedBy;
 }

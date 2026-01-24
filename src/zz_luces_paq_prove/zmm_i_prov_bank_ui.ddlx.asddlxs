@@ -1,61 +1,163 @@
 @Metadata.layer: #CORE
 @UI: {
   headerInfo: {
-    typeName: 'Datos Bancarios',
-    typeNamePlural: 'Datos Bancarios Proveedor',
+    typeName: 'Cuenta Bancaria',
+    typeNamePlural: 'Datos Bancarios de Proveedores',
     title: {
       type: #STANDARD,
       value: 'AccountHolder'
-    }
-  }
+    },
+    description: {
+      type: #STANDARD,
+      value: 'BankAccount'
+    },
+    imageUrl: 'sap-icon://payment-approval'
+  },
+  presentationVariant: [{
+    sortOrder: [{
+      by: 'ProvId',
+      direction: #ASC
+    }],
+    visualizations: [{
+      type: #AS_LINEITEM
+    }]
+  }]
 }
 annotate view ZMM_I_PROV_BANK with
 {
-  @UI.facet: [{
-    id: 'BankData',
-    purpose: #STANDARD,
-    type: #IDENTIFICATION_REFERENCE,
-    label: 'Información Bancaria',
-    position: 10
-  }]
+  @UI.facet: [
+    {
+      id: 'BankIdentification',
+      purpose: #STANDARD,
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'Identificación Cuenta',
+      position: 10
+    },
+    {
+      id: 'BankDetails',
+      purpose: #STANDARD,
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'BankInfo',
+      label: 'Detalles Bancarios',
+      position: 20
+    }
+  ]
 
   @UI: {
-    lineItem: [{ position: 10, importance: #HIGH }],
-    identification: [{ position: 10 }]
+    lineItem: [{ 
+      position: 10, 
+      importance: #HIGH,
+      label: 'ID Proveedor'
+    }],
+    identification: [{ 
+      position: 10,
+      label: 'ID Proveedor'
+    }],
+    selectionField: [{ position: 10 }]
   }
   ProvId;
 
   @UI: {
-    lineItem: [{ position: 20 }],
-    identification: [{ position: 20 }]
+    lineItem: [{ 
+      position: 20,
+      label: 'País Banco'
+    }],
+    identification: [{ 
+      position: 20,
+      label: 'País del Banco'
+    }],
+    fieldGroup: [{ 
+      qualifier: 'BankInfo',
+      position: 10,
+      label: 'País'
+    }],
+    selectionField: [{ position: 20 }]
   }
   BankCountry;
 
   @UI: {
-    lineItem: [{ position: 30 }],
-    identification: [{ position: 30 }]
+    lineItem: [{ 
+      position: 30,
+      label: 'Código Banco'
+    }],
+    identification: [{ 
+      position: 30,
+      label: 'Código del Banco'
+    }],
+    fieldGroup: [{ 
+      qualifier: 'BankInfo',
+      position: 20,
+      label: 'Código Banco'
+    }]
   }
   BankKey;
 
   @UI: {
-    lineItem: [{ position: 40, importance: #HIGH }],
-    identification: [{ position: 40 }]
+    lineItem: [{ 
+      position: 40, 
+      importance: #HIGH,
+      label: 'Nº Cuenta'
+    }],
+    identification: [{ 
+      position: 40,
+      label: 'Número de Cuenta'
+    }],
+    fieldGroup: [{ 
+      qualifier: 'BankInfo',
+      position: 30,
+      label: 'Número de Cuenta'
+    }]
   }
   BankAccount;
 
   @UI: {
-    lineItem: [{ position: 50 }],
-    identification: [{ position: 50 }]
+    lineItem: [{ 
+      position: 50,
+      label: 'Titular'
+    }],
+    identification: [{ 
+      position: 50,
+      label: 'Titular de la Cuenta'
+    }],
+    fieldGroup: [{ 
+      qualifier: 'BankInfo',
+      position: 40,
+      label: 'Titular'
+    }]
   }
   AccountHolder;
 
   @UI: {
-    identification: [{ position: 60 }]
+    lineItem: [{ 
+      position: 60,
+      label: 'Moneda'
+    }],
+    identification: [{ 
+      position: 60,
+      label: 'Moneda de la Cuenta'
+    }],
+    fieldGroup: [{ 
+      qualifier: 'BankInfo',
+      position: 50,
+      label: 'Moneda'
+    }]
   }
   BankCc;
 
   @UI: {
-    identification: [{ position: 70 }]
+    lineItem: [{ 
+      position: 70,
+      label: 'Tipo Cuenta'
+    }],
+    identification: [{ 
+      position: 70,
+      label: 'Tipo de Cuenta'
+    }],
+    fieldGroup: [{ 
+      qualifier: 'BankInfo',
+      position: 60,
+      label: 'Tipo'
+    }]
   }
   BankType;
 }
