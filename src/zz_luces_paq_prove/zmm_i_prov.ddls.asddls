@@ -1,5 +1,6 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'CDS View - Proveedores'
+@Metadata.allowExtensions: true
 define root view entity ZMM_I_PROV
   as select from zdataprov
 {
