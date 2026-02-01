@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vista local - Proveedores (Fiori UI5)</title>
+    <script
+      id="sap-ui-bootstrap"
+      src="https://ui5.sap.com/resources/sap-ui-core.js"
+      data-sap-ui-theme="sap_fiori_3"
+      data-sap-ui-libs="sap.m,sap.f"
+      data-sap-ui-resourceroots='{"preview.app": "./webapp"}'
+      data-sap-ui-compatVersion="edge"
+      data-sap-ui-async="true"
+      data-sap-ui-frameOptions="trusted"
+    ></script>
+  </head>
+  <body class="sapUiBody" id="content">
+    <script>
+      sap.ui.getCore().attachInit(function () {
+        sap.ui.require(["sap/ui/core/ComponentContainer"], function (ComponentContainer) {
+          new ComponentContainer({
+            name: "preview.app",
+            async: true,
+            settings: {
+              id: "preview.app",
+            },
+          }).placeAt("content");
+        });
+      });
+    </script>
+  </body>
+</html>

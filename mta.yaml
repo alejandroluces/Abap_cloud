@@ -1,0 +1,36 @@
+_schema-version: "3.2"
+ID: abap-cloud-preview
+version: 1.0.0
+
+modules:
+  - name: preview-app
+    type: html5
+    path: local-preview
+    build-parameters:
+      builder: custom
+      commands:
+        - echo "No build required for static UI5 preview"
+      supported-platforms: []
+
+  - name: preview-app-deployer
+    type: com.sap.application.content
+    path: .
+    requires:
+      - name: preview-html5-repo
+        parameters:
+          content-target: true
+    build-parameters:
+      build-result: resources
+      requires:
+        - name: preview-app
+          artifacts:
+            - preview-app.zip
+          target-path: resources/
+
+resources:
+  - name: preview-html5-repo
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: html5-apps-repo
+      service-plan: app-host
+      service-name: preview-html5-repo

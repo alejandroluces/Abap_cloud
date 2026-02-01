@@ -1,0 +1,45 @@
+<mvc:View
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  displayBlock="true"
+  controllerName="preview.app.controller.App"
+>
+  <App>
+    <Page title="Proveedores (Vista local)">
+      <content>
+        <VBox class="sapUiSmallMargin">
+          <SearchField
+            id="searchField"
+            placeholder="Buscar por nombre o ciudad"
+            liveChange="onSearch"
+          />
+          <Table
+            id="providersTable"
+            items="{path: '/Providers'}"
+            growing="true"
+            growingScrollToLoad="true"
+          >
+            <columns>
+              <Column><Text text="ID" /></Column>
+              <Column><Text text="Nombre" /></Column>
+              <Column><Text text="País" /></Column>
+              <Column><Text text="Ciudad" /></Column>
+              <Column><Text text="Banco" /></Column>
+            </columns>
+            <items>
+              <ColumnListItem>
+                <cells>
+                  <Text text="{ProviderID}" />
+                  <Text text="{Name}" />
+                  <Text text="{Country}" />
+                  <Text text="{City}" />
+                  <Text text="{BankType}" />
+                </cells>
+              </ColumnListItem>
+            </items>
+          </Table>
+        </VBox>
+      </content>
+    </Page>
+  </App>
+</mvc:View>
