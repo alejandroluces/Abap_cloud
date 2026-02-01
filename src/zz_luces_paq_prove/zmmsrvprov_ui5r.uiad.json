@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "{{appDescription}}",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "ZMMSRVPROV"
+  },
+  "ui5AppDetails": {
+    "appId": "936"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_1B04E8EFCE822EE5E1DEE1FB834C214EBFB649CD_TM",
+    "semanticObject": "ZMMSRVPROV",
+    "action": "ZMMSRVPROV",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_1B04E8EFCE822EE5E1DEE1FB834C214EBFB649CD_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "ZMMSRVPROV"
+      }
+    }
+  ]
+}
