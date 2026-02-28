@@ -14,6 +14,21 @@
     <item>/.gitlab-ci.yml</item>
     <item>/abaplint.json</item>
     <item>/azure-pipelines.yml</item>
+    <item>/src/z_data_prov.tabl.xml</item>
+    <item>/src/z_data_lfbk.tabl.xml</item>
+    <item>/src/zz_luces_paq_prove/z_data_prov.tabl.xml</item>
+    <item>/src/zz_luces_paq_prove/z_data_lfbk.tabl.xml</item>
+    <item>/src/zz_luces_paq_prove/zmmsrvprov_ui5r.uiad.json</item>
+    <item>/src/4949253bee8cd9385c5e8adca9bd8bht.sush.xml</item>
+    <item>/src/fc2c9c3f698be72e8747c4d943f533ht.sush.xml</item>
+    <item>/src/zz_luces_paq_inv/6ee8bfdc24f6026d013fbf313d4ca0ht.sush.xml</item>
+    <item>/src/zz_luces_paq_inv/a82187a1f4862a0335d958cb8d3be0ht.sush.xml</item>
+    <item>/src/zz_luces_paq_oc/ace9548294b4507085ac59ecd08afaht.sush.xml</item>
+    <item>/src/zz_luces_paq_oc/ba04c3f81c921f3213fd84c2ef3591ht.sush.xml</item>
+    <item>/src/zz_luces_paq_prove/0ec1bde89dd07cc220802314f52282ht.sush.xml</item>
+    <item>/src/zz_luces_paq_prove/98bd9f1141d9e1f8da375dbb1184d4ht.sush.xml</item>
+    <item>/src/zz_luces_paq_prove/9259dc741a1af246604f0e8439e5bdht.sush.xml</item>
+    <item>/src/zz_luces_paq_prove/f4d0c8b33983024b37d05c3d727bbeht.sush.xml</item>
    </IGNORE>
   </DATA>
  </asx:values>
