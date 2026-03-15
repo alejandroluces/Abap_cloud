@@ -1,0 +1,110 @@
+{
+  "_version": "1.49.0",
+  "sap.app": {
+    "id": "fiori.proveedores",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "title": "Proveedores",
+    "description": "Proveedores BTP OData V2",
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/sap/ZMM_SRV_PROV/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    },
+    "supportedThemes": [
+      "sap_horizon",
+      "sap_fiori_3"
+    ]
+  },
+  "sap.ui5": {
+    "dependencies": {
+      "minUI5Version": "1.108.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ushell": {},
+        "sap.ui.core": {},
+        "sap.suite.ui.generic.template": {}
+      }
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "fiori.proveedores.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "defaultBindingMode": "TwoWay",
+          "defaultCountMode": "Inline",
+          "refreshAfterChange": false
+        }
+      }
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "fiori.proveedores.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [],
+      "targets": {}
+    }
+  },
+  "sap.ui.generic.app": {
+    "settings": {
+      "forceGlobalRefresh": false,
+      "objectPageHeaderType": "Dynamic",
+      "considerAnalyticalParameters": true,
+      "showDraftToggle": false
+    },
+    "pages": {
+      "ListReport|Provider": {
+        "entitySet": "Provider",
+        "component": {
+          "name": "sap.suite.ui.generic.template.ListReport",
+          "list": true,
+          "settings": {
+            "condensedTableLayout": true,
+            "smartVariantManagement": true,
+            "enableTableFilterInPageVariant": true,
+            "filterSettings": {
+              "dateSettings": {
+                "useDateRange": true
+              }
+            }
+          }
+        },
+        "pages": {
+          "ObjectPage|Provider": {
+            "entitySet": "Provider",
+            "component": {
+              "name": "sap.suite.ui.generic.template.ObjectPage"
+            }
+          }
+        }
+      }
+    }
+  }
+}
