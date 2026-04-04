@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <abapGit version="v1.0.0" serializer="LCL_OBJECT_TABL" serializer_version="v1.0.0">
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
@@ -7,7 +7,9 @@
     <DDLANGUAGE>E</DDLANGUAGE>
     <TABCLASS>TRANSP</TABCLASS>
     <CLIDEP>X</CLIDEP>
+    <LANGDEP>X</LANGDEP>
     <DDTEXT>Draft table for ZEMP_RAP_001</DDTEXT>
+    <MASTERLANG>E</MASTERLANG>
     <CONTFLAG>A</CONTFLAG>
     <EXCLASS>4</EXCLASS>
    </DD02V>
@@ -105,12 +107,11 @@
     </DD03P>
     <DD03P>
      <FIELDNAME>STATUS</FIELDNAME>
+     <ROLLNAME>ZEMP_DE_STATUS</ROLLNAME>
      <ADMINFIELD>0</ADMINFIELD>
-     <INTTYPE>C</INTTYPE>
-     <INTLEN>000020</INTLEN>
-     <DATATYPE>CHAR</DATATYPE>
-     <LENG>000010</LENG>
-     <MASK>  CHAR</MASK>
+     <VALEXI>X</VALEXI>
+     <SHLPORIGIN>F</SHLPORIGIN>
+     <COMPTYPE>E</COMPTYPE>
     </DD03P>
     <DD03P>
      <FIELDNAME>CREATED_BY</FIELDNAME>
@@ -147,7 +148,7 @@
      <ADMINFIELD>0</ADMINFIELD>
      <PRECFIELD>SYCH_BDL_DRAFT_ADMIN_INC</PRECFIELD>
      <MASK>      S</MASK>
-     <DDTEXT>Draft Administrative Data</DDTEXT>
+     <DDTEXT>Standard Include for Draft Administration (BDL Syntax Check)</DDTEXT>
      <COMPTYPE>S</COMPTYPE>
     </DD03P>
    </DD03P_TABLE>
