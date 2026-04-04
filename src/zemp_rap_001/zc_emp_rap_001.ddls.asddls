@@ -11,6 +11,7 @@ define root view entity ZC_EMP_RAP_001
       hire_date,
       department,
       salary,
+      @Consumption.valueHelpDefinition: [{ entity: { name: 'ZI_EMP_STATUS_VH', element: 'Status' } }]
       status,
       created_by,
       created_at,

@@ -40,6 +40,7 @@ annotate view ZC_EMP_RAP_001 with
 
   @UI.lineItem: [ { position: 80, label: 'Estado' } ]
   @UI.identification: [ { position: 80, label: 'Estado' } ]
+  @UI.textArrangement: #TEXT_ONLY
   status;
 
   @UI.hidden: true
