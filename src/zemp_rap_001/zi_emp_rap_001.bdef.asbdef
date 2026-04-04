@@ -1,15 +1,24 @@
 managed implementation in class zbp_i_emp_rap_001 unique;
 strict ( 2 );
 
+with draft;
+
 define behavior for ZI_EMP_RAP_001 alias Employee
 persistent table zemp_rap_001
-lock master
+draft table zemp_d_emp_001
+lock master total etag last_changed_at
 authorization master ( global )
 etag master local_last_changed_at
 {
   create;
   update;
   delete;
+
+  draft action Edit;
+  draft action Activate;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
 
   field ( readonly ) created_by, created_at, last_changed_by, last_changed_at, local_last_changed_at;
   field ( mandatory ) first_name, last_name, email, department;

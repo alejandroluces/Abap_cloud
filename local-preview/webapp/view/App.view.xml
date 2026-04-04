@@ -19,6 +19,17 @@
             growing="true"
             growingScrollToLoad="true"
           >
+            <headerToolbar>
+              <OverflowToolbar>
+                <Title text="Lista de Proveedores" level="H2"/>
+                <ToolbarSpacer />
+                <Button 
+                  text="Crear Proveedor" 
+                  type="Emphasized" 
+                  icon="sap-icon://add" 
+                  press="onOpenCreateDialog" />
+              </OverflowToolbar>
+            </headerToolbar>
             <columns>
               <Column><Text text="ID" /></Column>
               <Column><Text text="Nombre" /></Column>
@@ -40,6 +51,32 @@
           </Table>
         </VBox>
       </content>
+      <dependents>
+        <Dialog id="createProviderDialog" title="Crear Nuevo Proveedor">
+          <content>
+            <VBox class="sapUiSmallMargin">
+              <Label text="ID Proveedor (Ej: P0004)" required="true"/>
+              <Input id="inpId" />
+              <Label text="Nombre" required="true"/>
+              <Input id="inpName" />
+              <Label text="País (Ej: CL, PE)"/>
+              <Input id="inpCountry" />
+              <Label text="Ciudad"/>
+              <Input id="inpCity" />
+              <Label text="Calle"/>
+              <Input id="inpStreet" />
+              <Label text="Tipo de Cuenta (Ej: CTA_CORRIENTE)"/>
+              <Input id="inpBankType" />
+            </VBox>
+          </content>
+          <beginButton>
+            <Button text="Guardar" type="Emphasized" press="onSaveProvider"/>
+          </beginButton>
+          <endButton>
+            <Button text="Cancelar" press="onCancelCreate"/>
+          </endButton>
+        </Dialog>
+      </dependents>
     </Page>
   </App>
 </mvc:View>
