@@ -1,0 +1,56 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+  typeName: 'Empleado',
+  typeNamePlural: 'Empleados',
+  title: { value: 'emp_id' }
+}
+annotate view ZC_EMP_RAP_001 with
+{
+  @UI.facet: [
+    { id: 'General', type: #IDENTIFICATION_REFERENCE, label: 'Datos Generales', position: 10 }
+  ]
+
+  @UI.lineItem: [ { position: 10, label: 'ID Empleado' } ]
+  @UI.identification: [ { position: 10, label: 'ID Empleado' } ]
+  emp_id;
+
+  @UI.lineItem: [ { position: 20, label: 'Nombre' } ]
+  @UI.identification: [ { position: 20, label: 'Nombre' } ]
+  first_name;
+
+  @UI.lineItem: [ { position: 30, label: 'Apellido' } ]
+  @UI.identification: [ { position: 30, label: 'Apellido' } ]
+  last_name;
+
+  @UI.lineItem: [ { position: 40, label: 'Email' } ]
+  @UI.identification: [ { position: 40, label: 'Email' } ]
+  email;
+
+  @UI.lineItem: [ { position: 50, label: 'Fecha Ingreso' } ]
+  @UI.identification: [ { position: 50, label: 'Fecha Ingreso' } ]
+  hire_date;
+
+  @UI.lineItem: [ { position: 60, label: 'Área' } ]
+  @UI.identification: [ { position: 60, label: 'Área' } ]
+  department;
+
+  @UI.lineItem: [ { position: 70, label: 'Salario' } ]
+  @UI.identification: [ { position: 70, label: 'Salario' } ]
+  salary;
+
+  @UI.lineItem: [ { position: 80, label: 'Estado' } ]
+  @UI.identification: [ { position: 80, label: 'Estado' } ]
+  status;
+
+  @UI.hidden: true
+  created_by;
+
+  @UI.hidden: true
+  created_at;
+
+  @UI.hidden: true
+  last_changed_by;
+
+  @UI.hidden: true
+  last_changed_at;
+}

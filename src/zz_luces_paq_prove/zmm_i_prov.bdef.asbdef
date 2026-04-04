@@ -1,0 +1,28 @@
+managed implementation in class zbp_mm_i_prov unique;
+//strict ( 2 );
+
+define behavior for ZMM_I_PROV alias Proveedor
+persistent table zdataprov
+lock master
+//authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  update;
+  delete;
+
+  field ( mandatory ) ProvId;
+  field ( readonly ) CreatedOn, CreatedBy;
+
+  mapping for zdataprov
+  {
+    ProvId = prov_id;
+    Name1 = name1;
+    Country = country;
+    City = city;
+    Street = street;
+    CreatedOn = created_on;
+    Nif1 = nif1;
+    CreatedBy = created_by;
+  }
+}

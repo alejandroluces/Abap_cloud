@@ -1,0 +1,36 @@
+managed implementation in class zbp_i_emp_rap_001 unique;
+strict ( 2 );
+
+define behavior for ZI_EMP_RAP_001 alias Employee
+persistent table zemp_rap_001
+lock master
+authorization master ( global )
+etag master local_last_changed_at
+{
+  create;
+  update;
+  delete;
+
+  field ( readonly ) created_by, created_at, last_changed_by, last_changed_at, local_last_changed_at;
+  field ( mandatory ) first_name, last_name, email, department;
+
+  validation validate_employee on save { create; update; }
+  determination set_default_status on modify { create; }
+
+  mapping for zemp_rap_001
+  {
+    emp_id                = emp_id;
+    first_name            = first_name;
+    last_name             = last_name;
+    email                 = email;
+    hire_date             = hire_date;
+    department            = department;
+    salary                = salary;
+    status                = status;
+    created_by            = created_by;
+    created_at            = created_at;
+    last_changed_by       = last_changed_by;
+    last_changed_at       = last_changed_at;
+    local_last_changed_at = local_last_changed_at;
+  }
+}
