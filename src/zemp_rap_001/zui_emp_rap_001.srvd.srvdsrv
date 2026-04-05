@@ -1,5 +1,5 @@
 @EndUserText.label: 'Servicio Empleados RAP'
 define service ZUI_EMP_RAP_001 {
-  expose ZC_EMP_RAP_001 as Employees;
+  expose ZC_EMP_RAP_001   as Employees;
   expose ZI_EMP_STATUS_VH as StatusVH;
 }

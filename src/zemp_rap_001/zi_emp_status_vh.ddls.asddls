@@ -3,6 +3,9 @@
 @ObjectModel.query.implementedBy: 'ABAP:ZCL_EMP_STATUS_VH'
 define custom entity ZI_EMP_STATUS_VH
 {
+  @ObjectModel.text.element: ['Description']
   key Status : abap.char(10);
+  
+  @Semantics.text: true
   Description : abap.char(20);
 }
